@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    table, th,td{border: 1px solid black;}
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello ✅</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse</th>
+            <th>Age</th>
+        </tr>
+        {% for etudiant in etudiants %}
+            <tr>
+            <td>{{ etudiant.Id }}</td>
+            <td>{{ etudiant.Nom }}</td>
+            <td>{{ etudiant.Prenom }}</td>
+            <td>{{ etudiant.Adresse }}</td>
+            <td>{{ etudiant.Age }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <ul>
+        <li>Your controller at <code><a href="{{ '/var/www/html/firstSite/src/Controller/TestController.php'|file_link(0) }}">src/Controller/TestController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/var/www/html/firstSite/templates/test/index.html.twig'|file_link(0) }}">templates/test/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}
